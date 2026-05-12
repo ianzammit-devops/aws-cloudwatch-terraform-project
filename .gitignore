@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+# Ministack persisted data (cache, generated certs, machine-specific)
+volume/
+
+>>>>>>> master
 # Local .terraform directories
 .terraform/
 
