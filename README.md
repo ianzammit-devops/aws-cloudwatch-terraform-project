@@ -58,6 +58,23 @@ git clone https://github.com/ianzammit-devops/aws-cloudwatch-terraform-project.g
 
 Open the folder in your IDE and start a terminal in the project directory.
 
+### Create Terraform Vars File
+In the root of the project, create a file called **terraform.tfvars**
+
+Inside this file, paste the following (make sure to replace with your own email address):
+```
+localstack                     = false
+aws_region                     = "eu-west-2"
+environment                    = "dev"
+alert_email                    = "YOUR_EMAIL@gmail.com"
+memory_alarm_threshold_percent = 70
+cloudwatch_log_retention_days  = 7
+# Demo: HTTP :80 — no ACM certificate. For TLS use HTTPS on 443 and set alb_certificate_arn.
+alb_listener_protocol = "HTTP"
+alb_listener_port     = 80
+alb_internal          = false
+```
+
 
 ### Setup S3 Bucket
 This project uses a remote Terraform state, which means the Terraform state file is stored in AWS.
